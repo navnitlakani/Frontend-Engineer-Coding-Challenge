@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project setup
 
-run nom i
+run npm i
 
 ## Development server
 
