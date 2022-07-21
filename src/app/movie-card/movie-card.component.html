@@ -1,0 +1,74 @@
+
+
+
+<!-- Banner Start -->
+
+<section class="banner">
+  <div class="banner-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="typo1">
+            <h2>The Untold Story of the great Lorem Ipsum</h2>
+            <h4>Action | Adventure</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. optio repellendus aperiam modi Lorem ipsum dolor sit, amet consectetur adipisicing elit. optio repellendus aperiam. </p>
+            <button class="button is-medium">Watch It Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner-img"></div>
+</section>
+
+<!-- Banner End -->
+
+<!-- Movie List Start -->
+<section class="movielist">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="title">
+          <h3>All Movies</h3>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-6 col-md-6 movielist-main"
+            *ngFor="let movie of getMovieData() | async"
+            attr.id="movie_{{ movie.ID }}">
+            <a [routerLink]="['/movie-detail', { id: movie.ID }]" >
+              <div class="movie-box">
+                <div class="movie-image">
+                  <img src="/assets/images/movie-art.jpg" alt=""  [attr.img-id]="movie.ID"  attr.id="movie_{{ movie.ID }}_image"    draggable="true"
+                  (dragstart)="drag($event)"/>
+                </div>
+                <div class="movie-text">
+                  <h3>{{ movie.Title }}</h3>
+                </div>
+              </div>
+            </a>
+            <div class="rating-list">
+              <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+          <div class="title">
+            <h3>Watched Movies</h3>
+        </div>
+        <div
+          class="row watched-main"
+          id="div2"
+          (drop)="drop($event)"
+          (dragover)="allowDrop($event)"
+        >
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Movie List Start -->

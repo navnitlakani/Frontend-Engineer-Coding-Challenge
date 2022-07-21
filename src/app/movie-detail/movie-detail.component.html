@@ -1,0 +1,53 @@
+<!-- Page Content -->
+<!-- <div
+  class="container"
+  *ngIf="movieData$  | async as movie">
+
+  <div class="row">
+      ID:  {{ movie.ID }}
+
+      Title:  {{ movie.Title }}
+
+  </div>
+
+</div> -->
+
+<section class="movie-detail-banner">
+  <img src="/assets/images/Atlantis.png" alt="">
+</section>
+<section class="movie-detail">
+  <div class="container" *ngIf="movieData$  | async as movie">
+    <div class="row justify-content-center ">
+      <div class="col-lg-10">
+        <div class="row movie-detail-wrap">
+          <div class="col-lg-4 col-md-4">
+
+            <div class="movielist-main">
+              <div class="movie-box">
+                <div class="movie-image">
+                  <img src="{{ movie.Image }}" alt="">
+                </div>
+                <div class="movie-text">
+                  <div class="rating-list">
+                    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
+                  </div>
+                  <span class="movie-favourite">
+                    <i (click)="toggleFavourite()" [ngClass]="(isFavourite())?'fa fa-heart':'fa fa-heart-o'"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-8 col-md-8">
+            <div class="movie-detail-info">
+              <h2>{{ movie.Title }}</h2>
+              <div [innerHTML]="movie.Description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,499 @@
+/* You can add global styles to this file, and also import other style files */
+/* Common Styles */
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600;700&display=swap";
+@import "~css-star-rating/scss/star-rating";
+
+
+/* SCSS veriable */
+
+$font-dark: #0F1C1D;
+$red-color: #fe4141;
+$white-text: #fff;
+
+
+/* Zoom in Keyframes */
+@-webkit-keyframes "zoomin" {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes "zoomin" {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+/*End of Zoom in Keyframes */
+
+
+/* Zoom out Keyframes */
+@-webkit-keyframes "zoomout" {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes "zoomout" {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+/*End of Zoom out Keyframes */
+
+
+
+/* Header */
+
+body {
+	line-height: 1;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: $font-dark;
+	overflow-x: hidden;
+	letter-spacing: 0;
+}
+p {
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: 400;
+}
+a {
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: 400;
+	&:focus {
+		color: $font-dark;
+		text-decoration: none;
+	}
+	&:hover {
+		color: $font-dark;
+		text-decoration: none;
+	}
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+div {
+	outline: none;
+}
+
+
+header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1e1b26), color-stop(0.35, #1e1b26), color-stop(0.5, black), color-stop(0.65, #1e1b26), color-stop(0.85, rgb(0 0 0 / 56%)), color-stop(1, transparent));
+	z-index: 99;
+	box-shadow: 0px 45px 100px rgb(30 27 38 / 60%), inset 0 0 0 1000px rgb(30 27 38 / 65%);
+	padding-bottom: 20px;
+	.navbar-nav {
+		.nav-item {
+			color: $white-text;
+			margin-right: 30px;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	.navbar-brand {
+		h1 {
+			color: $white-text;
+			font-size: 30px;
+			i {
+				color: $red-color !important;
+			}
+		}
+	}
+}
+
+
+/* Banner Styles */
+
+.banner-main {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 80px 0 20px;
+}
+section.banner {
+	position: relative;
+	padding: 0;
+	min-height: 680px;
+	overflow: hidden;
+}
+.typo1 {
+	h2 {
+		color: $white-text;
+		font-size: 40px;
+		font-weight: 700;
+	}
+	h4 {
+		font-size: 18px;
+		color: $red-color;
+		font-weight: 400;
+		margin: 16px 0 26px;
+	}
+	p {
+		color: $white-text;
+		letter-spacing: 0;
+	}
+}
+.button {
+	font-size: 16px;
+	background: $white-text;
+	border: 2px solid $white-text;
+	color: #000;
+	border-radius: 50px;
+	padding: 14px 30px;
+	margin-top: 20px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		background: $red-color;
+		color: $white-text;
+		border: 2px solid $red-color;
+	}
+}
+.banner-img {
+	box-shadow: 0px 45px 100px rgb(30 27 38 / 60%), inset 0 0 0 1000px rgb(30 27 38 / 75%);
+	background: url(/assets/images/Atlantis.png);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	animation: zoomin 10s ease-in infinite;
+	transition: all 0.5s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+
+
+/* movie box */
+
+.title {
+	margin-bottom: 30px;
+	h2 {
+		font-size: 38px;
+		font-weight: 800;
+	}
+}
+.title-small {
+	h3 {
+		font-size: 22px;
+		text-align: center;
+	}
+}
+.movielist {
+	padding: 100px 0 80px;
+}
+.movie-text {
+  padding: 10px 15px 20px;
+	position: relative;
+	margin-top: -20px;
+	h3 {
+		font-size: 18px;
+		color: $white-text;
+		margin-bottom: 30px;
+	}
+	.movie-favourite {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		transform: translate(0px, -26px);
+		i {
+			color: $white-text;
+			font-size: 20px;
+		}
+	}
+}
+.movielist-main {
+	position: relative;
+	margin-bottom: 22px;
+}
+.movie-box {
+  background: #1e1b26;
+	.movie-image {
+		img {
+			-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, black), color-stop(0.35, black), color-stop(0.5, black), color-stop(0.65, black), color-stop(0.85, rgba(0, 0, 0, 0.6)), color-stop(1, transparent));
+			width: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		position: relative;
+		overflow: hidden;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06) 39%, rgba(30, 27, 38, 0.88) 53%, #1e1b26 55%);
+	}
+	&:hover {
+		img {
+			animation: zoomin 2s ease-in infinite;
+		}
+	}
+}
+.movie-detail-wrap {
+	padding: 35px 20px;
+	background: #f7f7f7;
+	margin-top: -140px;
+	z-index: 99;
+	box-shadow: 0px 10px 13px -7px rgb(0 0 0 / 30%);
+  .movielist-main {
+		margin-bottom: 0;
+	}
+}
+.rating-list {
+	position: absolute;
+	bottom: 14px;
+	left: 20px;
+	cursor: pointer;
+}
+.watched-main {
+	border: 1px solid #000;
+	padding: 18px 5px;
+	margin: 0;
+	position: relative;
+	.movie-text {
+		width: calc(100% - 150px);
+		margin-top: 0;
+	}
+	.rating-list {
+		left: 170px;
+	}
+	.movielist-main {
+		width: 100% !important;
+		margin-bottom: 15px;
+	}
+	.movie-box {
+		.movie-image {
+			max-width: 150px;
+		}
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&:after {
+		content: "move Here";
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -8px);
+		font-size: 16px;
+		opacity: 0.4;
+		text-transform: uppercase;
+		bottom: 0;
+	}
+}
+
+
+
+
+/* Footer */
+
+
+footer {
+	background: #1e1b26;
+}
+span.footer-text {
+	color: $white-text;
+	font-size: 16px;
+	font-weight: 400;
+}
+.footer-nav {
+	li {
+		a {
+			color: $white-text;
+		}
+	}
+}
+
+
+
+
+/* movie detail page */
+
+
+.movie-detail-banner {
+	img {
+		position: relative;
+		width: 100%;
+		object-fit: cover;
+		max-height: 560px;
+	}
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		background: rgb(30 27 38 / 80%);
+		width: 100%;
+		height: 100%;
+		left: initial;
+		top: 0;
+		z-index: 1;
+	}
+}
+section.movie-detail {
+	position: relative;
+	z-index: 9;
+	padding-bottom: 80px;
+}
+.movie-detail-info {
+	h2 {
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 12px;
+	}
+}
+
+
+
+/* Responsive style */
+
+@media screen and (max-width: 1140px) {
+	.movie-detail-banner {
+		img {
+			max-height: 460px;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.navbar-toggler {
+		i {
+			color: $white-text;
+			font-size: 28px;
+		}
+		&:hover {
+			box-shadow: none;
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	header {
+		-webkit-mask-image: none;
+		padding-bottom: 4px;
+		background: rgb(30 27 38);
+		box-shadow: none;
+	}
+	.navbar-nav {
+		padding-bottom: 0 !important;
+	}
+	section.banner {
+		min-height: 580px;
+	}
+	.movielist {
+		padding: 60px 0;
+	}
+	.movie-detail-info {
+		h2 {
+			font-size: 30px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.movie-detail-wrap {
+		.movielist-main {
+			margin-bottom: 22px;
+		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.typo1 {
+		h2 {
+			color: $white-text;
+			font-size: 30px;
+		}
+		h4 {
+			margin: 16px 0 16px;
+		}
+	}
+	section.banner {
+		min-height: 500px;
+	}
+	.movielist-main {
+		margin-bottom: 15px;
+	}
+	.movie-detail-wrap {
+		padding: 20px 5px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	.movie-detail-banner {
+		img {
+			min-height: 360px;
+		}
+	}
+	.movie-detail-info {
+		h2 {
+			font-size: 24px;
+		}
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.typo1 {
+		h2 {
+			font-size: 22px;
+		}
+	}
+	p {
+		font-size: 15px;
+	}
+	a {
+		font-size: 15px;
+	}
+	.button {
+		font-size: 15px;
+	}
+	.movielist {
+		padding: 50px 0;
+	}
+	.title {
+		margin-bottom: 20px;
+	}
+}
